@@ -1,0 +1,274 @@
+/* Golbal Styles */
+:root {
+    --dark-blue: hsl(240, 38%, 20%);
+    --garyish-blue: hsl(240, 18%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;  /* Weights: 300, 500, 700 */
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+main {
+    padding: 1em;
+    width: fit-content;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.curve {
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+::selection {
+    background-color: #9975D0;
+    color: var(--dark-blue);
+}
+
+
+/* Slider Container Styles */
+.slider {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-image: url("./images/pattern-bg.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.photo {
+    max-width: 78%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 20px -10px hsl(240, 18%, 50%);
+}
+
+#tanya {
+    left: 50%;
+}
+
+#john {
+    left: 150%;
+}
+
+.arrows {
+    width: 6em;
+    padding: .6em .1em;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 2px 20px 0px hsl(240, 18%, 50%);
+}
+
+.pre-nxt {
+    cursor: pointer;
+}
+
+@keyframes next-tanya-slide {
+    from {left: 50%;}
+    to {left: -50%;}
+}
+
+@keyframes next-john-slide {
+    from {left: 150%;}
+    to {left: 50%;}
+}
+
+@keyframes pre-tanya-slide {
+    from {left: -50%;}
+    to {left: 50%;}
+}
+
+@keyframes pre-john-slide {
+    from {left: 50%;}
+    to {left: 150%;}
+}
+
+
+
+/* Review Container Styles */
+.review-con {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-txt {
+    padding: 0.8em;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: hsl(240, 18%, 50%);
+}
+
+.name {
+    margin-top: 5px;
+    justify-self: center;
+    text-align: center;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.title {
+    margin-top: -15px;
+    justify-self: center;
+    text-align: center;
+    font-weight: 400;
+    color: var(--garyish-blue);
+}
+
+.qoute {
+    max-width: 60px;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: opacity(70%);
+}
+
+
+/* Latptop Screen Sizes */
+@media screen and (min-width: 1024px) {
+
+    /* Global Styles */
+    main {
+        padding: 1em 3em;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    /* Slider Container Styles */
+    .slider {
+        order: 2;
+        margin-right: 2em;
+        width: 70%;
+        height: 80vh;
+        transform: translateX(-10%);
+        z-index: 1;
+    }
+
+    .arrows {
+        bottom: 1%;
+        left: 35%;
+    }
+
+
+    /* Review Container Styles */
+    .review-con {
+        order: 1;
+        margin-left: 2em;
+        width: 80%;
+        position: relative;
+        transform: translateX(12%);
+        z-index: 2;
+    }
+
+    .review-txt {
+        text-align: left;
+        font-size: 24px;
+        line-height: 38px;
+    }
+
+    .name {
+        padding-left: 1em;
+        width: fit-content;
+        text-align: left;
+    }
+
+    .title {
+        width: fit-content;
+        position: absolute;
+        bottom: 0;
+        left: 23%;
+        text-align: center;
+    }
+
+    br {
+        display: none;
+    }
+
+    .qoute {
+        left: 25%;
+    }
+}
+
+
+/* More Screen Sizes */
+@media screen and (min-width: 1024px) and (min-height: 760px) {
+    .arrows {
+        bottom: 9%;
+    }
+}
+
+
+@media screen and (width: 414px) {
+    .arrows {
+        bottom: 0;
+    }
+}
+
+@media screen and (width: 375px) and (height: 667px) {
+    .arrows {
+        bottom: -4%;
+    }
+}
+
+@media screen and (width: 360px) {
+    .photo {
+        max-width: 75%;
+    }
+
+    .arrows {
+        padding: .4em .1em;
+        bottom: -2%;
+    }
+}
+
+@media screen and (width: 320px) {
+    .photo {
+        max-width: 75%;
+    }
+
+    .arrows {
+        padding: .4em .1em;
+        bottom: -2%;
+    }
+
+    .review-con {
+        height: 35vh;
+    }
+
+    .review-txt {
+        font-size: 14px;
+    }
+
+    .name {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 11px;
+    }
+}
